@@ -2,6 +2,7 @@ package es.studium.HundirLaFlota;
 
 import java.awt.Button;
 import java.awt.Color;
+import java.awt.Dialog;
 import java.awt.Frame;
 import java.awt.GridLayout;
 import java.awt.Label;
@@ -13,6 +14,10 @@ public class Vista
 	Frame carga = new Frame("Pantalla de Carga");
 	Frame menuPrincipal = new Frame("Menú Principal");
 	Frame nuevaPartida = new Frame("Partida");
+	
+	Dialog errorLog = new Dialog(login, "Mensaje", true);
+	Label mensajeFB = new Label("      ¡Error en los credenciales!");
+
 	
 	//Elementos Login
 	Label lblUsuario = new Label("Usuario:", Label.CENTER);
@@ -57,6 +62,11 @@ public class Vista
 		menuPrincipal.setBackground(Color.pink);
 		menuPrincipal.setVisible(false);
 
+		// Añado elementos al dialog
+		errorLog.add(mensajeFB);
+		errorLog.setSize(200, 200);
+		errorLog.setLocationRelativeTo(null);
+		
 	}
 }
 
