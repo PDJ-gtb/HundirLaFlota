@@ -55,7 +55,7 @@ public class Vista
 		menuPrincipal.setSize(800, 400);
 		menuPrincipal.setResizable(false); // ← OJO: solo funciona con JFrame, no Frame
 		menuPrincipal.setBackground(Color.pink);
-		menuPrincipal.setVisible(true);
+		menuPrincipal.setVisible(false);
 
 	}
 }

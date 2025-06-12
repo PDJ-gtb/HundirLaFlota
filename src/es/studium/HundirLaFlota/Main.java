@@ -7,6 +7,8 @@ public class Main
 	{
 
 		Vista vista = new Vista();
+		Modelo modelo = new Modelo();
+		new Controlador(vista,modelo);
 
 	}
 
