@@ -13,7 +13,7 @@ public class Modelo
 {
 	String driver = "com.mysql.cj.jdbc.Driver";
 	String url = "jdbc:mysql://localhost:3306/tiro_al_barco";
-	String login = "admin1";
+	String login = "adminBueno";
 	String password = "Studium2025#";
 	String sentencia = "";
 	Connection connection = null;
@@ -52,13 +52,13 @@ public class Modelo
 
 		boolean credencialesCorrectas= false;
 		String claveEncriptada = hashSha256(clave);
-		sentencia = "SELECT * FROM usuarios WHERE nombreJugador= '"+usuario + "' AND passJugador = SHA2('"+ claveEncriptada + "',256);";
+		sentencia = "SELECT * FROM jugadores WHERE nombreJugador= '"+usuario + "' AND passJugador = SHA2('"+ clave + "',256);";
 
 		try
 		{
 			statement = conexion.createStatement();
 			rs = statement.executeQuery(sentencia);
-
+			System.out.println(sentencia);
 			if (rs.next()) {
 				credencialesCorrectas=true;
 			}

@@ -16,6 +16,9 @@ public  Controlador (Vista v, Modelo m){
     this.modelo = m;
 	
    vista.btnLogear.addActionListener(this);
+   vista.errorLog.addWindowListener(this);
+   vista.login.addWindowListener(this);
+   vista.btnNuevaPartida.addActionListener(this);
     }
 
 @Override
@@ -28,8 +31,12 @@ public void windowOpened(WindowEvent e)
 @Override
 public void windowClosing(WindowEvent e)
 {
-	// TODO Auto-generated method stub
-	
+	if (e.getSource().equals(vista.login)) {
+		vista.login.setVisible(false);
+	}
+	else if (e.getSource().equals(vista.errorLog)) {
+		vista.errorLog.setVisible(false);
+	}
 }
 
 @Override
@@ -74,12 +81,22 @@ public void actionPerformed(ActionEvent e)
 	if(e.getSource().equals(vista.btnLogear)) {
 		Connection connection=	modelo.conectar();
 		if(modelo.comprobarCredenciales(connection,vista.txtUsuario.getText(),vista.txtContrasena.getText())) {
+			vista.login.setVisible(false);
 			vista.menuPrincipal.setVisible(true);
 			System.out.println("Datos correctos");
 		} 
 		else {
+			vista.errorLog.setVisible(true);
 			System.out.println("Comprobación");
 		}
+		modelo.desconectar(connection);
+	}
+	else if (e.getSource().equals(vista.btnNuevaPartida)) {
+		vista.nuevaPartida.setLocationRelativeTo(null);
+		vista.nuevaPartida.toFront();
+		vista.nuevaPartida.setVisible(true);
+
+		System.out.println("Nueva partida");
 	}
 }
 }
