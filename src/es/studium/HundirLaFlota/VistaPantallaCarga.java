@@ -42,6 +42,7 @@ public class VistaPantallaCarga extends JFrame {
                 g.setColor(Color.WHITE);
                 g.setFont(new Font("Arial", Font.BOLD, 20));
                 g.drawString(progreso + "%", 380, 425);
+                
             }
         };
 

@@ -1,10 +1,10 @@
 package es.studium.HundirLaFlota;
 
-public class ModeloPantallaCarga
+public class Modelo
 {
 	private int progreso;
 
-    public ModeloPantallaCarga() {
+    public Modelo() {
         this.progreso = 0;
     }
 
