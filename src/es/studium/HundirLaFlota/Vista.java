@@ -47,7 +47,7 @@ public class Vista
 	
 	//Elementos Menu
 	Label lblTitulo = new Label("Hundir La Flota", Label.CENTER);
-	Button btnNuevaPartida = new Button("Nueva Partida");
+	Button btnNuevaPartida = new Button("Nueva Partidaaaaa");
 	Button btnRanking = new Button("Ranking");
 	Button btnAyuda = new Button("Ayuda");
 	Button btnSalir = new Button("Salir");
