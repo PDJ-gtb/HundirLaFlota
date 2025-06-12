@@ -22,7 +22,7 @@ public class Vista
 	Button btnLogear = new Button("Login");
 	
 	//Elementos Menu
-	Label lblTitulo = new Label("Hundir La Flota");
+	Label lblTitulo = new Label("Hundir La Flota", Label.CENTER);
 	Button btnNuevaPartida = new Button("Nueva Partida");
 	Button btnRanking = new Button("Ranking");
 	Button btnAyuda = new Button("Ayuda");
@@ -40,10 +40,23 @@ public class Vista
 		
 
 		login.setSize(400, 200);
-		login.setLocationRelativeTo(null); // ← OJO: solo funciona con JFrame, no Frame
+		login.setResizable(false); // ← OJO: solo funciona con JFrame, no Frame
 		login.setBackground(Color.pink);
 		login.setVisible(true);
 		
+		menuPrincipal.setLayout(new GridLayout(5, 5, 10, 10));
+		
+		menuPrincipal.add(lblTitulo);
+		menuPrincipal.add(btnNuevaPartida);
+		menuPrincipal.add(btnRanking);
+		menuPrincipal.add(btnAyuda);
+		menuPrincipal.add(btnSalir);
+		
+		menuPrincipal.setSize(800, 400);
+		menuPrincipal.setResizable(false); // ← OJO: solo funciona con JFrame, no Frame
+		menuPrincipal.setBackground(Color.pink);
+		menuPrincipal.setVisible(true);
+
 	}
 }
 
